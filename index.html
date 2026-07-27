@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pitchside — 2v2 League</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230d1220'/%3E%3Cpath d='M9 11 L9 6 L12.5 8.2 L16 4.5 L19.5 8.2 L23 6 L23 11 Z' fill='%2327c26b'/%3E%3Ccircle cx='16' cy='20' r='7' fill='none' stroke='%23eef2f8' stroke-width='1.4'/%3E%3Cpath d='M16 17.9 L18 19.4 L17.2 21.7 L14.8 21.7 L14 19.4 Z' fill='%2327c26b'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Saira:wght@400;500;600;700&family=Saira+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
@@ -67,8 +68,10 @@
   }
   .topbar-in{max-width:920px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;gap:14px}
   .brand{display:flex;align-items:center;gap:12px;flex:1;min-width:0}
-  .crest{flex:0 0 auto;width:44px;height:44px;border-radius:50%;display:grid;place-items:center}
-  .crest svg{width:44px;height:44px;filter:drop-shadow(0 3px 6px rgba(0,0,0,.35))}
+  .crest{flex:0 0 auto;display:grid;place-items:center;color:var(--text)}
+  .crest svg{height:50px;width:auto;filter:drop-shadow(0 2px 4px rgba(0,0,0,.28))}
+  .crest .fillink{fill:currentColor}
+  .crest .fillacc{fill:var(--accent)}
   .brand .txt{min-width:0}
   .brand .lockup{font-family:var(--disp);font-weight:800;font-size:22px;letter-spacing:.02em;line-height:.95;text-transform:uppercase}
   .brand .lockup em{color:var(--accent);font-style:normal}
@@ -326,24 +329,30 @@
   <div class="topbar-in">
     <div class="brand">
       <div class="crest">
-        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <radialGradient id="pbSphere" cx="35%" cy="30%" r="78%">
-              <stop offset="0%" stop-color="#ffffff"/>
-              <stop offset="55%" stop-color="#f4f6f9"/>
-              <stop offset="100%" stop-color="#cfd6e0"/>
-            </radialGradient>
-          </defs>
-          <circle cx="20" cy="20" r="18.5" fill="url(#pbSphere)"/>
-          <path d="M20 14.82 L24.93 18.40 L23.05 24.19 L16.95 24.19 L15.07 18.40 Z" fill="#16202e"/>
-          <g stroke="#16202e" stroke-width="1.7" stroke-linecap="round">
-            <line x1="20" y1="14.82" x2="20" y2="6.3"/>
-            <line x1="24.93" y1="18.40" x2="33.03" y2="15.77"/>
-            <line x1="23.05" y1="24.19" x2="28.05" y2="31.08"/>
-            <line x1="16.95" y1="24.19" x2="11.95" y2="31.08"/>
-            <line x1="15.07" y1="18.40" x2="6.97" y2="15.77"/>
+        <svg viewBox="0 0 44 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Pitchside crest">
+          <!-- crown -->
+          <path class="fillink" d="M12 13 L12 6.5 L16.5 9.5 L22 4.5 L27.5 9.5 L32 6.5 L32 13 Z"/>
+          <circle class="fillink" cx="12" cy="5.2" r="1"/><circle class="fillink" cx="22" cy="3.2" r="1.1"/><circle class="fillink" cx="32" cy="5.2" r="1"/>
+          <!-- shield -->
+          <path d="M7.5 17 Q7.5 14.8 9.7 14.8 L34.3 14.8 Q36.5 14.8 36.5 17 L36.5 33 Q36.5 40.5 22 49 Q7.5 40.5 7.5 33 Z" stroke="currentColor" stroke-width="1.7" fill="none"/>
+          <path d="M9.7 18.1 Q9.7 16.7 11 16.7 L33 16.7 Q34.3 16.7 34.3 18.1 L34.3 32.4 Q34.3 39 22 46.3 Q9.7 39 9.7 32.4 Z" stroke="currentColor" stroke-width="0.8" fill="none" opacity="0.5"/>
+          <!-- laurels -->
+          <g stroke="currentColor" stroke-width="1" fill="none" opacity="0.65" stroke-linecap="round">
+            <path d="M13.4 40.5 Q10.4 33.5 12.8 27"/>
+            <path d="M12.5 31.2 Q10.4 30.6 9.7 28.8"/><path d="M12.7 34.6 Q10.6 34.2 9.8 32.5"/><path d="M13.2 38 Q11.2 37.8 10.4 36.2"/>
+            <path d="M30.6 40.5 Q33.6 33.5 31.2 27"/>
+            <path d="M31.5 31.2 Q33.6 30.6 34.3 28.8"/><path d="M31.3 34.6 Q33.4 34.2 34.2 32.5"/><path d="M30.8 38 Q32.8 37.8 33.6 36.2"/>
           </g>
-          <circle cx="20" cy="20" r="18.5" fill="none" stroke="#b3bcc9" stroke-width="1"/>
+          <!-- football -->
+          <circle cx="22" cy="30" r="9" stroke="currentColor" stroke-width="1.4" fill="none"/>
+          <path class="fillacc" d="M22 27.3 L24.57 29.17 L23.59 32.18 L20.41 32.18 L19.43 29.17 Z"/>
+          <g stroke="currentColor" stroke-width="1.1" stroke-linecap="round">
+            <line x1="22" y1="27.3" x2="22" y2="23.52"/>
+            <line x1="24.57" y1="29.17" x2="28.16" y2="28"/>
+            <line x1="23.59" y1="32.18" x2="25.81" y2="35.24"/>
+            <line x1="20.41" y1="32.18" x2="18.19" y2="35.24"/>
+            <line x1="19.43" y1="29.17" x2="15.84" y2="28"/>
+          </g>
         </svg>
       </div>
       <div class="txt">
@@ -869,18 +878,29 @@ async function shareTable(){
   x.fillStyle='#0d1220'; x.fillRect(0,0,W,H);
   let gr=x.createRadialGradient(W*0.85,-40,40,W*0.85,-40,760); gr.addColorStop(0,'rgba(39,194,107,0.20)'); gr.addColorStop(1,'rgba(39,194,107,0)'); x.fillStyle=gr; x.fillRect(0,0,W,H);
   gr=x.createRadialGradient(60,-30,30,60,-30,560); gr.addColorStop(0,'rgba(77,141,255,0.16)'); gr.addColorStop(1,'rgba(77,141,255,0)'); x.fillStyle=gr; x.fillRect(0,0,W,H);
-  // crest — football
-  const bx=padX+40, by=96, br=38, pentR=br*0.28, seamR=br*0.74;
-  let sg=x.createRadialGradient(bx-13,by-15,6,bx,by,br+6);
-  sg.addColorStop(0,'#ffffff'); sg.addColorStop(0.55,'#f4f6f9'); sg.addColorStop(1,'#cdd4de');
-  x.beginPath(); x.arc(bx,by,br,0,7); x.fillStyle=sg; x.fill();
-  x.fillStyle='#16202e'; x.strokeStyle='#16202e'; x.lineWidth=3.6; x.lineCap='round';
-  x.beginPath();
-  for(let i=0;i<5;i++){ const a=(-90+i*72)*Math.PI/180, px=bx+pentR*Math.cos(a), py=by+pentR*Math.sin(a); i?x.lineTo(px,py):x.moveTo(px,py); }
-  x.closePath(); x.fill();
-  for(let i=0;i<5;i++){ const a=(-90+i*72)*Math.PI/180;
-    x.beginPath(); x.moveTo(bx+pentR*Math.cos(a),by+pentR*Math.sin(a)); x.lineTo(bx+seamR*Math.cos(a),by+seamR*Math.sin(a)); x.stroke(); }
-  x.beginPath(); x.arc(bx,by,br,0,7); x.strokeStyle='#b3bcc9'; x.lineWidth=2; x.stroke();
+  // crest — football shield
+  (function(){
+    const cx0=padX+40, top=50;
+    x.lineJoin='round'; x.lineCap='round';
+    x.fillStyle='#eef2f8';
+    x.beginPath();
+    x.moveTo(cx0-14, top+12); x.lineTo(cx0-14, top+1); x.lineTo(cx0-7, top+6); x.lineTo(cx0, top-4.5); x.lineTo(cx0+7, top+6); x.lineTo(cx0+14, top+1); x.lineTo(cx0+14, top+12); x.closePath(); x.fill();
+    const sT=top+14, sL=cx0-31, sR=cx0+31, sMid=sT+35, sPt=sT+72;
+    x.strokeStyle='#eef2f8'; x.lineWidth=2.6;
+    x.beginPath();
+    x.moveTo(sL, sT+5); x.quadraticCurveTo(sL, sT, sL+5, sT);
+    x.lineTo(sR-5, sT); x.quadraticCurveTo(sR, sT, sR, sT+5);
+    x.lineTo(sR, sMid); x.quadraticCurveTo(sR, sPt-10, cx0, sPt);
+    x.quadraticCurveTo(sL, sPt-10, sL, sMid); x.closePath(); x.stroke();
+    const bcx=cx0, bcy=sT+32, bbr=18, pR=bbr*0.3, smR=bbr*0.72;
+    x.strokeStyle='#eef2f8'; x.lineWidth=2; x.beginPath(); x.arc(bcx,bcy,bbr,0,7); x.stroke();
+    x.fillStyle='#27c26b'; x.beginPath();
+    for(let i=0;i<5;i++){ const a=(-90+i*72)*Math.PI/180, px=bcx+pR*Math.cos(a), py=bcy+pR*Math.sin(a); i?x.lineTo(px,py):x.moveTo(px,py); }
+    x.closePath(); x.fill();
+    x.strokeStyle='#eef2f8'; x.lineWidth=1.7;
+    for(let i=0;i<5;i++){ const a=(-90+i*72)*Math.PI/180;
+      x.beginPath(); x.moveTo(bcx+pR*Math.cos(a),bcy+pR*Math.sin(a)); x.lineTo(bcx+smR*Math.cos(a),bcy+smR*Math.sin(a)); x.stroke(); }
+  })();
   // title
   x.textBaseline='alphabetic';
   x.font='800 58px "Saira Condensed", sans-serif';
