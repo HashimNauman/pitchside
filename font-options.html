@@ -6,77 +6,48 @@
 <title>Pitchside — Font Options</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Saira:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{--ground:#0d1220;--raise:#141b2b;--line:#233049;--text:#eef2f8;--muted:#8b97ad;--faint:#5c6784;--accent:#27c26b;--kitA:#4d8dff;--kitB:#ff5b5b}
   *{box-sizing:border-box;margin:0;padding:0}
-  body{background:radial-gradient(900px 500px at 80% -8%,rgba(39,194,107,.10),transparent 60%),var(--ground);color:var(--text);font-family:'Hanken Grotesk',system-ui,sans-serif;padding:28px 18px 60px;line-height:1.5}
+  body{background:radial-gradient(900px 500px at 80% -8%,rgba(39,194,107,.10),transparent 60%),var(--ground);color:var(--text);font-family:'Inter',system-ui,sans-serif;padding:28px 18px 60px;line-height:1.5}
   .wrap{max-width:940px;margin:0 auto}
   h1.title{font-size:24px;font-weight:700;letter-spacing:-.3px;margin-bottom:4px}
-  .lead{color:var(--muted);font-size:14px;margin-bottom:24px;max-width:60ch}
+  .lead{color:var(--muted);font-size:14px;margin-bottom:24px;max-width:64ch}
   .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
   .opt{background:linear-gradient(180deg,var(--raise),#0e1512);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:0 20px 40px -24px rgba(0,0,0,.6)}
   .tag{display:inline-block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:2px}
   .fam{font-size:12px;color:var(--faint);margin-bottom:18px}
-  .wordmark{font-size:34px;line-height:1;margin-bottom:4px}
-  .wordmark em{color:var(--accent);font-style:inherit}
-  .sub{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-bottom:20px}
-  .heading{font-size:17px;margin-bottom:12px}
+  .wordmark{font-size:32px;line-height:1;margin-bottom:5px;font-weight:700;letter-spacing:-.5px}
+  .wordmark em{color:var(--accent);font-style:normal}
+  .sub{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:20px;font-weight:600}
+  .heading{font-size:16px;margin-bottom:12px;font-weight:600;text-transform:uppercase;letter-spacing:.05em}
   .row{display:flex;align-items:center;gap:12px;padding:8px 0;border-top:1px solid rgba(255,255,255,.06)}
-  .rank{width:18px;color:var(--faint)}
-  .pname{flex:1;font-family:'Hanken Grotesk',sans-serif;font-weight:500}
-  .stat{width:34px;text-align:center;color:var(--muted)}
-  .pts{width:34px;text-align:right;color:var(--accent)}
-  .score{font-size:40px;margin:16px 0 6px;display:flex;gap:10px;align-items:baseline}
-  .score .a{color:var(--kitA)}.score .b{color:var(--kitB)}.score .d{color:var(--faint);font-size:26px}
-  .body-txt{font-family:'Hanken Grotesk',sans-serif;font-weight:400;font-size:13px;color:var(--muted)}
+  .rank{width:18px;color:var(--faint);font-weight:600}
+  .pname{flex:1;font-weight:500}
+  .stat{width:34px;text-align:center;color:var(--muted);font-weight:600}
+  .pts{width:34px;text-align:right;color:var(--accent);font-weight:700}
+  .score{font-size:38px;margin:16px 0 6px;display:flex;gap:10px;align-items:baseline;font-weight:700}
+  .score .a{color:var(--kitA)}.score .b{color:var(--kitB)}.score .d{color:var(--faint);font-size:24px}
+  .body-txt{font-weight:400;font-size:13px;color:var(--muted)}
 
-  /* ---- Display face + treatment per option ---- */
-  /* headings/wordmark/numbers use --disp; each option sets it */
-  .opt .wordmark,.opt .heading,.opt .rank,.opt .stat,.opt .pts,.opt .score{font-family:var(--disp)}
-
-  /* Option 1: Saira, medium italic (evolves current) */
-  .o1{--disp:'Saira'}
-  .o1 .wordmark{font-weight:600;font-style:italic;letter-spacing:-.5px}
-  .o1 .heading{font-weight:600;font-style:italic;text-transform:uppercase;letter-spacing:.02em}
-  .o1 .rank,.o1 .stat,.o1 .pts,.o1 .score{font-weight:600}
-  .o1 .score{font-style:italic}
-
-  /* Option 2: Hanken Grotesk, semibold italic */
-  .o2{--disp:'Hanken Grotesk'}
-  .o2 .wordmark{font-weight:600;font-style:italic;letter-spacing:-.6px}
-  .o2 .heading{font-weight:600;font-style:italic;text-transform:uppercase;letter-spacing:.03em}
-  .o2 .rank,.o2 .stat,.o2 .pts,.o2 .score{font-weight:600}
-  .o2 .score{font-style:italic}
-
-  /* Option 3: Archivo, italic sport */
-  .o3{--disp:'Archivo'}
-  .o3 .wordmark{font-weight:600;font-style:italic;letter-spacing:-.4px}
-  .o3 .heading{font-weight:500;font-style:italic;text-transform:uppercase;letter-spacing:.05em}
-  .o3 .rank,.o3 .stat,.o3 .pts,.o3 .score{font-weight:600}
-  .o3 .score{font-style:italic}
-
-  /* Option 4: Instrument Sans, light + subtle italic */
-  .o4{--disp:'Instrument Sans'}
-  .o4 .wordmark{font-weight:500;font-style:italic;letter-spacing:-.4px}
-  .o4 .heading{font-weight:500;font-style:normal;text-transform:uppercase;letter-spacing:.06em}
-  .o4 .rank,.o4 .stat,.o4 .pts,.o4 .score{font-weight:500}
-  .o4 .score{font-style:italic}
-
-  /* current, for reference */
-  .cur .wordmark{font-family:'Saira';font-weight:400;font-style:normal;text-transform:uppercase;letter-spacing:.02em}
+  .opt .wordmark,.opt .sub,.opt .heading,.opt .rank,.opt .pname,.opt .stat,.opt .pts,.opt .score,.opt .body-txt{font-family:var(--disp)}
+  .o1{--disp:'Inter'}
+  .o2{--disp:'Manrope'}
+  .o3{--disp:'Plus Jakarta Sans'}
+  .o4{--disp:'Hanken Grotesk'}
   .note{margin-top:26px;font-size:12.5px;color:var(--faint);text-align:center}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <h1 class="title">Pitchside — font options</h1>
-  <p class="lead">Same UI, four cleaner directions. Each drops the heavy 800-weight condensed caps for lighter weights with italic headings. Pick the one you like (or mix — e.g. “Option 2's wordmark, Option 3's numbers”).</p>
+  <h1 class="title">Pitchside — font options (clean sans, no italics)</h1>
+  <p class="lead">Four upright sans-serif families, all at lighter weights than the current heavy display face. Same layout so you can compare fairly. Pick one and I'll apply it everywhere.</p>
   <div class="grid">
 
     <div class="opt o1">
       <span class="tag">Option 1</span>
-      <div class="fam">Saira · medium italic (evolves current)</div>
+      <div class="fam">Inter — the clean neutral standard</div>
       <div class="wordmark">Pitch<em>side</em></div>
       <div class="sub">2v2 League</div>
       <div class="heading">Standings</div>
@@ -88,7 +59,7 @@
 
     <div class="opt o2">
       <span class="tag">Option 2</span>
-      <div class="fam">Hanken Grotesk · semibold italic</div>
+      <div class="fam">Manrope — geometric, modern, crisp</div>
       <div class="wordmark">Pitch<em>side</em></div>
       <div class="sub">2v2 League</div>
       <div class="heading">Standings</div>
@@ -100,7 +71,7 @@
 
     <div class="opt o3">
       <span class="tag">Option 3</span>
-      <div class="fam">Archivo · italic sport</div>
+      <div class="fam">Plus Jakarta Sans — friendly, contemporary</div>
       <div class="wordmark">Pitch<em>side</em></div>
       <div class="sub">2v2 League</div>
       <div class="heading">Standings</div>
@@ -112,7 +83,7 @@
 
     <div class="opt o4">
       <span class="tag">Option 4</span>
-      <div class="fam">Instrument Sans · light, subtle italic</div>
+      <div class="fam">Hanken Grotesk — warm, rounded grotesque</div>
       <div class="wordmark">Pitch<em>side</em></div>
       <div class="sub">2v2 League</div>
       <div class="heading">Standings</div>
@@ -123,7 +94,7 @@
     </div>
 
   </div>
-  <p class="note">For reference, the current display face is Saira Condensed at weight 800, uppercase — the heaviest of the bunch.</p>
+  <p class="note">All upright, no italics. Headings use weight 600 (vs the current 800), so everything reads lighter.</p>
 </div>
 </body>
 </html>
